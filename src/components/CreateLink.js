@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
-import graphql from 'graphql-anywhere';
-
 import { graphql } from 'react-apollo'
-import { gql } from 'graphql-tag'
+import gql from 'graphql-tag'
 
 class CreateLink extends Component {
     state = {
@@ -42,6 +40,7 @@ class CreateLink extends Component {
                 url
             }
         })
+        this.props.history.push('/')
     }
 }
 

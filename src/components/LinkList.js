@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Link from "./Link"
 
-import graphql from 'react-apollo'
+import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 
 class LinkList extends Component {
@@ -14,7 +14,7 @@ class LinkList extends Component {
             return <div>Error</div>
         }
 
-        const linksToRead = this.props.feedQuery.feed.links;
+        const linksToRender = this.props.feedQuery.feed.links;
 
         return (
             <div>{linksToRender.map(link => <Link key={link.id} link={link}/>)}</div>
@@ -22,7 +22,7 @@ class LinkList extends Component {
     }
 }
 
-const FEED_QUERY = gql`
+export const FEED_QUERY = gql`
     query FeedQuery {
         feed {
             links {
@@ -35,4 +35,6 @@ const FEED_QUERY = gql`
     }
 `
 
-export default graphql(FEED_QUERY, { name: 'feedQuery' }) (LinkList)
+export default graphql(FEED_QUERY, { 
+    name: 'feedQuery'
+ }) (LinkList)
