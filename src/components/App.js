@@ -5,6 +5,7 @@ import LinkList from './LinkList'
 import CreateLink from './CreateLink'
 import Header from './Header'
 import Login from './Login'
+import Search from './Search'
 
 class App extends Component {
   render() {
@@ -16,6 +17,7 @@ class App extends Component {
             <Route exact path="/" Component={LinkList} />
             <Route exact path="/login" Component={Login} />
             <Route exact path="/create" Component={CreateLink} />
+            <Route exact path="/search" Component={Search} />
           </Switch>
         </div>
       </div>
